@@ -41,6 +41,7 @@ If you're running this in a Linux or WSL environment:
    ```
 
 ---
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 ---
 
 # ✅ Auto Change Directory to Desktop (recommended)
@@ -61,7 +62,7 @@ cd %USERPROFILE%\Desktop && curl -O https://raw.githubusercontent.com/akashdip20
 
 ---
 
-### **For PowerShell**
+### **For PowerShell** (✅ recommended)
 Use this command:
 ```powershell
 Set-Location -Path "$HOME\Desktop"; Invoke-WebRequest -Uri "https://raw.githubusercontent.com/akashdip2001/cmd-Command-Prompt-Script/refs/heads/main/office_2019_2021.cmd" -OutFile "office_2019_2021.cmd"; Start-Process -FilePath ".\office_2019_2021.cmd" -Wait
@@ -80,3 +81,46 @@ cd ~/Desktop && curl -O https://raw.githubusercontent.com/akashdip2001/cmd-Comma
 ```
 
 ---
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+---
+
+# ask for Delet
+
+---
+
+### **For Windows Command Prompt** (⚠️ Not work properly)
+```cmd
+cd %USERPROFILE%\Desktop
+curl -O https://raw.githubusercontent.com/akashdip2001/cmd-Command-Prompt-Script/refs/heads/main/office_2019_2021.cmd
+office_2019_2021.cmd
+echo.
+set /p deleteFile="Do you want to delete the downloaded file (yes/no)? "
+if /i "%deleteFile%"=="yes" del office_2019_2021.cmd
+```
+
+---
+
+### **For PowerShell** (✅ recommended)
+```powershell
+Set-Location -Path "$HOME\Desktop"
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/akashdip2001/cmd-Command-Prompt-Script/refs/heads/main/office_2019_2021.cmd" -OutFile "office_2019_2021.cmd"
+Start-Process -FilePath ".\office_2019_2021.cmd" -Wait
+$deleteFile = Read-Host "Do you want to delete the downloaded file (yes/no)?"
+if ($deleteFile -eq "yes") {
+    Remove-Item -Path "office_2019_2021.cmd" -Force
+}
+```
+
+---
+
+### **For Linux/WSL**
+```bash
+cd ~/Desktop
+curl -O https://raw.githubusercontent.com/akashdip2001/cmd-Command-Prompt-Script/refs/heads/main/office_2019_2021.cmd
+chmod +x office_2019_2021.cmd
+./office_2019_2021.cmd
+read -p "Do you want to delete the downloaded file (yes/no)? " deleteFile
+if [ "$deleteFile" = "yes" ]; then
+    rm office_2019_2021.cmd
+fi
+```
