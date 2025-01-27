@@ -1,3 +1,13 @@
+### Temporary turn 0ff windows defender
+
+![Screenshot (56)](https://github.com/user-attachments/assets/428bba0f-162f-4ac5-8dae-4081edf9e4f9)
+
+## cd Desktop (any known /Dir)
+### Run in CMD or PowerShell
+
+![Screenshot (59)](https://github.com/user-attachments/assets/242a6504-5768-465e-b2f3-2169fd18382f)
+![Screenshot (58)](https://github.com/user-attachments/assets/4bb027f4-6530-4804-8493-fe798f5e9904)
+
 To run your `.cmd` file directly using the provided raw GitHub URL (`https://raw.githubusercontent.com/akashdip2001/cmd-Command-Prompt-Script/refs/heads/main/office_2019_2021.cmd`), follow these steps:
 
 ---
