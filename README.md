@@ -1,4 +1,8 @@
-# Manually Change Directory 
+# Manually Change Directory
+
+<details>
+  <summary style="opacity: 0.85;"><b>know more</b></summary><br>
+   
 ### Temporary turn 0ff windows defender
 
 ![Screenshot (56)](https://github.com/user-attachments/assets/428bba0f-162f-4ac5-8dae-4081edf9e4f9)
@@ -40,10 +44,11 @@ If you're running this in a Linux or WSL environment:
    ./office_2019_2021.cmd
    ```
 
+</details>
+
 ---
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
----
 
 # ✅ Auto Change Directory to Desktop (recommended)
 
@@ -84,9 +89,10 @@ cd ~/Desktop && curl -O https://raw.githubusercontent.com/akashdip2001/cmd-Comma
 ---
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
----
+# Ask for Delete
 
-# ask for Delet
+<details>
+  <summary style="opacity: 0.85;"><b>know more</b></summary><br>
 
 ---
 
@@ -126,3 +132,5 @@ if [ "$deleteFile" = "yes" ]; then
     rm office_2019_2021.cmd
 fi
 ```
+
+</details>
