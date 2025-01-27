@@ -179,3 +179,88 @@ if ($deleteFile -eq "yes") {
 ![Screenshot (60)](https://github.com/user-attachments/assets/093c14ec-5d46-40b8-9483-3064382d4aae)
 ![Screenshot (62)](https://github.com/user-attachments/assets/f07f1004-16bc-4686-8fb1-07691dfec660)
 
+
+---
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+
+<details>
+  <summary style="opacity: 0.85;"><b>know more - Auto PowerShell Script to Disable Entire Windows Defender, Run the Script, and Re-enable Defender</b></summary><br>
+
+# Auto PowerShell Script to Disable Entire Windows Defender, Run the Script, and Re-enable Defender
+
+![Screenshot (63)](https://github.com/user-attachments/assets/34b97edb-9005-48a2-8b16-4933425bc09d)
+
+Completely disable Windows Defender (including real-time protection) and then re-enable it after the script runs in PowerShell
+
+### PowerShell Script to Disable Entire Windows Defender, Run the Script, and Re-enable Defender
+
+```powershell
+Set-ExecutionPolicy Bypass -Scope Process -Force; 
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/akashdip2001/cmd-Command-Prompt-Script-office-2019-2021/refs/heads/main/office_2019_2021.cmd" -OutFile "$env:USERPROFILE\Desktop\office_2019_2021.cmd"; 
+Set-Location -Path "$env:USERPROFILE\Desktop"; 
+
+# Function to completely disable Windows Defender
+function Disable-WindowsDefender {
+    Write-Host "Disabling Windows Defender..." -ForegroundColor Yellow
+    Set-MpPreference -DisableRealtimeMonitoring $true
+    Set-MpPreference -DisableBehaviorMonitoring $true
+    Set-MpPreference -DisableBlockAtFirstSeen $true
+    Set-MpPreference -DisableIOAVProtection $true
+    Set-MpPreference -DisablePrivacyMode $true
+    Write-Host "Windows Defender has been disabled." -ForegroundColor Green
+}
+
+# Disable Windows Defender
+Disable-WindowsDefender
+
+# Run the script
+Start-Process -FilePath "$env:USERPROFILE\Desktop\office_2019_2021.cmd" -Wait
+
+# Ask for deletion
+$deleteFile = Read-Host "Do you want to delete the downloaded file (yes/no)?"
+if ($deleteFile -eq "yes") {
+    Remove-Item -Path "$env:USERPROFILE\Desktop\office_2019_2021.cmd" -Force
+    Write-Host "File deleted successfully." -ForegroundColor Green
+}
+
+# Function to re-enable Windows Defender
+function Enable-WindowsDefender {
+    Write-Host "Enabling Windows Defender..." -ForegroundColor Yellow
+    Set-MpPreference -DisableRealtimeMonitoring $false
+    Set-MpPreference -DisableBehaviorMonitoring $false
+    Set-MpPreference -DisableBlockAtFirstSeen $false
+    Set-MpPreference -DisableIOAVProtection $false
+    Set-MpPreference -DisablePrivacyMode $false
+    Write-Host "Windows Defender has been re-enabled." -ForegroundColor Green
+}
+
+# Re-enable Windows Defender
+Enable-WindowsDefender
+```
+
+### Steps to Execute:
+1. **Open PowerShell as Administrator** on the target PC.
+2. Paste the entire script into the PowerShell window and press **Enter**.
+
+### What This Script Does:
+1. **Disables Windows Defender**:
+   - Disables **Real-Time Monitoring**, **Behavior Monitoring**, **Block at First Seen**, **IOAV Protection**, and **Privacy Mode**.
+2. **Downloads and Executes the File**:
+   - Downloads the `.cmd` script from your GitHub repository.
+   - Executes the script.
+3. **File Deletion**:
+   - Prompts the user to delete the file after execution.
+4. **Re-enables Windows Defender**:
+   - Re-enables all the features of Windows Defender that were previously disabled.
+
+---
+
+### Troubleshooting Tips:
+1. **Windows Defender Blocking the File**: If Windows Defender still blocks the script, you may need to temporarily disable it through the **Windows Security Settings** manually or add an exclusion for the file/folder you're working with.
+2. **File Being Marked as a Virus**: If your `.cmd` file is being flagged, you can:
+   - **Submit the file** to Windows Defender as a false positive.
+   - Use an **external antivirus tool** to check the file if you're sure it is safe.
+   
+---
+
+</details>
