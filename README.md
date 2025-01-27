@@ -1,3 +1,4 @@
+# Manually Change Directory 
 ### Temporary turn 0ff windows defender
 
 ![Screenshot (56)](https://github.com/user-attachments/assets/428bba0f-162f-4ac5-8dae-4081edf9e4f9)
@@ -38,5 +39,44 @@ If you're running this in a Linux or WSL environment:
    ```bash
    ./office_2019_2021.cmd
    ```
+
+---
+---
+
+# ✅ Auto Change Directory to Desktop (recommended)
+
+Automatically change the directory to the Desktop and download the file there before running it:
+
+---
+
+### **For Windows Command Prompt**
+Run this command:
+```cmd
+cd %USERPROFILE%\Desktop && curl -O https://raw.githubusercontent.com/akashdip2001/cmd-Command-Prompt-Script/refs/heads/main/office_2019_2021.cmd && office_2019_2021.cmd
+```
+
+- `%USERPROFILE%\Desktop` ensures you move to the Desktop directory.
+- `curl -O` downloads the file to the current directory (Desktop).
+- `office_2019_2021.cmd` executes the downloaded file.
+
+---
+
+### **For PowerShell**
+Use this command:
+```powershell
+Set-Location -Path "$HOME\Desktop"; Invoke-WebRequest -Uri "https://raw.githubusercontent.com/akashdip2001/cmd-Command-Prompt-Script/refs/heads/main/office_2019_2021.cmd" -OutFile "office_2019_2021.cmd"; Start-Process -FilePath ".\office_2019_2021.cmd" -Wait
+```
+
+- `Set-Location -Path "$HOME\Desktop"` changes the directory to the Desktop.
+- `Invoke-WebRequest` downloads the file.
+- `Start-Process` runs the `.cmd` file.
+
+---
+
+### **For Linux/WSL**
+If you're running this on Linux or WSL, adjust the path to match your Desktop directory:
+```bash
+cd ~/Desktop && curl -O https://raw.githubusercontent.com/akashdip2001/cmd-Command-Prompt-Script/refs/heads/main/office_2019_2021.cmd && chmod +x office_2019_2021.cmd && ./office_2019_2021.cmd
+```
 
 ---
