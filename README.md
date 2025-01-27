@@ -1,7 +1,7 @@
-# Manually Change Directory
-
 <details>
-  <summary style="opacity: 0.85;"><b>know more</b></summary><br>
+  <summary style="opacity: 0.85;"><b>know more - Manually Change Directory</b></summary><br>
+
+# Manually Change Directory
    
 ### Temporary turn 0ff windows defender
 
@@ -43,12 +43,14 @@ If you're running this in a Linux or WSL environment:
    ```bash
    ./office_2019_2021.cmd
    ```
-
-</details>
-
+   
 ---
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
+</details>
+
+<details>
+  <summary style="opacity: 0.85;"><b>know more - Auto Change Directory to Desktop</b></summary><br>
 
 # ✅ Auto Change Directory to Desktop (recommended)
 
@@ -89,10 +91,12 @@ cd ~/Desktop && curl -O https://raw.githubusercontent.com/akashdip2001/cmd-Comma
 ---
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
-# Ask for Delete
+</details>
 
 <details>
-  <summary style="opacity: 0.85;"><b>know more</b></summary><br>
+  <summary style="opacity: 0.85;"><b>know more - Ask for Delete</b></summary><br>
+
+# Ask for Delete
 
 ---
 
@@ -132,5 +136,46 @@ if [ "$deleteFile" = "yes" ]; then
     rm office_2019_2021.cmd
 fi
 ```
-
 </details>
+
+---
+
+# with Error Handelling (✅ Use it)
+
+![Screenshot (61)](https://github.com/user-attachments/assets/e9a7b088-0538-472b-b473-26247cb7d154)
+
+- ⚠️ Temporary turn 0ff windows defender (Real Time)
+- ✅ Auto Download to Desktop
+- ✅ Auto Run
+- ✅ Ask for Delete --> say "Yes"
+
+```powershell
+# Navigate to the Desktop
+Set-Location -Path "$HOME\Desktop"
+
+# Download the file
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/akashdip2001/cmd-Command-Prompt-Script-office-2019-2021/refs/heads/main/office_2019_2021.cmd" -OutFile "office_2019_2021.cmd"
+
+# Run the file
+Start-Process -FilePath ".\office_2019_2021.cmd" -Wait
+
+# Ask the user if they want to delete the file
+$deleteFile = Read-Host "Do you want to delete the downloaded file (yes/no)?"
+
+# Handle the user's response
+if ($deleteFile -eq "yes") {
+    # Ensure the file exists before attempting to delete
+    if (Test-Path -Path "office_2019_2021.cmd") {
+        Remove-Item -Path "office_2019_2021.cmd" -Force
+        Write-Host "File deleted successfully."
+    } else {
+        Write-Host "File not found. Nothing to delete."
+    }
+} else {
+    Write-Host "File was not deleted."
+}
+```
+
+![Screenshot (60)](https://github.com/user-attachments/assets/093c14ec-5d46-40b8-9483-3064382d4aae)
+![Screenshot (62)](https://github.com/user-attachments/assets/f07f1004-16bc-4686-8fb1-07691dfec660)
+
