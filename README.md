@@ -42,6 +42,7 @@ If you're running this in a Linux or WSL environment:
 
 ---
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+
 ---
 
 # ✅ Auto Change Directory to Desktop (recommended)
@@ -82,6 +83,7 @@ cd ~/Desktop && curl -O https://raw.githubusercontent.com/akashdip2001/cmd-Comma
 
 ---
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+
 ---
 
 # ask for Delet
