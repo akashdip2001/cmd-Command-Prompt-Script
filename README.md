@@ -16,7 +16,7 @@ To run your `.cmd` file directly using the provided raw GitHub URL (`https://raw
 ### **For Windows Command Prompt**
 Run the following command in **Command Prompt**:
 ```cmd
-curl -O https://raw.githubusercontent.com/akashdip2001/cmd-Command-Prompt-Script/refs/heads/main/office_2019_2021.cmd && office_2019_2021.cmd
+curl -O https://raw.githubusercontent.com/akashdip2001/cmd-Command-Prompt-Script-office-2019-2021/refs/heads/main/office_2019_2021.cmd && office_2019_2021.cmd
 ```
 
 ---
@@ -24,7 +24,7 @@ curl -O https://raw.githubusercontent.com/akashdip2001/cmd-Command-Prompt-Script
 ### **For PowerShell**
 Use the following command in **PowerShell**:
 ```powershell
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/akashdip2001/cmd-Command-Prompt-Script/refs/heads/main/office_2019_2021.cmd" -OutFile "office_2019_2021.cmd"; Start-Process -FilePath ".\office_2019_2021.cmd" -Wait
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/akashdip2001/cmd-Command-Prompt-Script-office-2019-2021/refs/heads/main/office_2019_2021.cmd" -OutFile "office_2019_2021.cmd"; Start-Process -FilePath ".\office_2019_2021.cmd" -Wait
 ```
 
 ---
@@ -54,7 +54,7 @@ Automatically change the directory to the Desktop and download the file there be
 ### **For Windows Command Prompt**
 Run this command:
 ```cmd
-cd %USERPROFILE%\Desktop && curl -O https://raw.githubusercontent.com/akashdip2001/cmd-Command-Prompt-Script/refs/heads/main/office_2019_2021.cmd && office_2019_2021.cmd
+cd %USERPROFILE%\Desktop && curl -O https://raw.githubusercontent.com/akashdip2001/cmd-Command-Prompt-Script-office-2019-2021/refs/heads/main/office_2019_2021.cmd && office_2019_2021.cmd
 ```
 
 - `%USERPROFILE%\Desktop` ensures you move to the Desktop directory.
@@ -66,7 +66,7 @@ cd %USERPROFILE%\Desktop && curl -O https://raw.githubusercontent.com/akashdip20
 ### **For PowerShell** (✅ recommended)
 Use this command:
 ```powershell
-Set-Location -Path "$HOME\Desktop"; Invoke-WebRequest -Uri "https://raw.githubusercontent.com/akashdip2001/cmd-Command-Prompt-Script/refs/heads/main/office_2019_2021.cmd" -OutFile "office_2019_2021.cmd"; Start-Process -FilePath ".\office_2019_2021.cmd" -Wait
+Set-Location -Path "$HOME\Desktop"; Invoke-WebRequest -Uri "https://raw.githubusercontent.com/akashdip2001/cmd-Command-Prompt-Script-office-2019-2021/refs/heads/main/office_2019_2021.cmd" -OutFile "office_2019_2021.cmd"; Start-Process -FilePath ".\office_2019_2021.cmd" -Wait
 ```
 
 - `Set-Location -Path "$HOME\Desktop"` changes the directory to the Desktop.
@@ -78,7 +78,7 @@ Set-Location -Path "$HOME\Desktop"; Invoke-WebRequest -Uri "https://raw.githubus
 ### **For Linux/WSL**
 If you're running this on Linux or WSL, adjust the path to match your Desktop directory:
 ```bash
-cd ~/Desktop && curl -O https://raw.githubusercontent.com/akashdip2001/cmd-Command-Prompt-Script/refs/heads/main/office_2019_2021.cmd && chmod +x office_2019_2021.cmd && ./office_2019_2021.cmd
+cd ~/Desktop && curl -O https://raw.githubusercontent.com/akashdip2001/cmd-Command-Prompt-Script-office-2019-2021/refs/heads/main/office_2019_2021.cmd && chmod +x office_2019_2021.cmd && ./office_2019_2021.cmd
 ```
 
 ---
@@ -93,7 +93,7 @@ cd ~/Desktop && curl -O https://raw.githubusercontent.com/akashdip2001/cmd-Comma
 ### **For Windows Command Prompt** (⚠️ Not work properly)
 ```cmd
 cd %USERPROFILE%\Desktop
-curl -O https://raw.githubusercontent.com/akashdip2001/cmd-Command-Prompt-Script/refs/heads/main/office_2019_2021.cmd
+curl -O https://raw.githubusercontent.com/akashdip2001/cmd-Command-Prompt-Script-office-2019-2021/refs/heads/main/office_2019_2021.cmd
 office_2019_2021.cmd
 echo.
 set /p deleteFile="Do you want to delete the downloaded file (yes/no)? "
@@ -105,7 +105,7 @@ if /i "%deleteFile%"=="yes" del office_2019_2021.cmd
 ### **For PowerShell** (✅ recommended)
 ```powershell
 Set-Location -Path "$HOME\Desktop"
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/akashdip2001/cmd-Command-Prompt-Script/refs/heads/main/office_2019_2021.cmd" -OutFile "office_2019_2021.cmd"
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/akashdip2001/cmd-Command-Prompt-Script-office-2019-2021/refs/heads/main/office_2019_2021.cmd" -OutFile "office_2019_2021.cmd"
 Start-Process -FilePath ".\office_2019_2021.cmd" -Wait
 $deleteFile = Read-Host "Do you want to delete the downloaded file (yes/no)?"
 if ($deleteFile -eq "yes") {
@@ -118,7 +118,7 @@ if ($deleteFile -eq "yes") {
 ### **For Linux/WSL**
 ```bash
 cd ~/Desktop
-curl -O https://raw.githubusercontent.com/akashdip2001/cmd-Command-Prompt-Script/refs/heads/main/office_2019_2021.cmd
+curl -O https://raw.githubusercontent.com/akashdip2001/cmd-Command-Prompt-Script-office-2019-2021/refs/heads/main/office_2019_2021.cmd
 chmod +x office_2019_2021.cmd
 ./office_2019_2021.cmd
 read -p "Do you want to delete the downloaded file (yes/no)? " deleteFile
