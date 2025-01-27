@@ -186,7 +186,7 @@ if ($deleteFile -eq "yes") {
 <details>
   <summary style="opacity: 0.85;"><b>know more - Auto PowerShell Script to Disable Entire Windows Defender, Run the Script, and Re-enable Defender</b></summary><br>
 
-# Auto PowerShell Script to Disable Entire Windows Defender, Run the Script, and Re-enable Defender
+# ❌ Auto PowerShell Script to Disable Entire Windows Defender, Run the Script, and Re-enable Defender
 
 ![Screenshot (63)](https://github.com/user-attachments/assets/34b97edb-9005-48a2-8b16-4933425bc09d)
 
